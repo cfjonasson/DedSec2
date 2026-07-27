@@ -19,7 +19,7 @@
   const form = document.getElementById('joinForm');
   const note = document.getElementById('formNote');
 
-  var FORM_SUBMIT_DELAY_MS = 1200;
+  const FORM_SUBMIT_DELAY_MS = 1200;
 
   if (form && note) {
     form.addEventListener('submit', function (e) {
@@ -29,9 +29,9 @@
       note.textContent = '';
       note.className = 'form-note';
 
-      var alias   = form.elements['alias'];
-      var email   = form.elements['email'];
-      var message = form.elements['message'];
+      const alias   = form.elements['alias'];
+      const email   = form.elements['email'];
+      const message = form.elements['message'];
 
       // Validation — leverage browser built-in checks for email
       if (!alias.value.trim()) {
@@ -51,7 +51,7 @@
       }
 
       // Simulate async transmission
-      var btn = form.querySelector('button[type="submit"]');
+      const btn = form.querySelector('button[type="submit"]');
       if (btn) {
         btn.disabled = true;
         btn.textContent = 'Transmitting...';
