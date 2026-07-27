@@ -19,6 +19,8 @@
   const form = document.getElementById('joinForm');
   const note = document.getElementById('formNote');
 
+  var FORM_SUBMIT_DELAY_MS = 1200;
+
   if (form && note) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -27,17 +29,17 @@
       note.textContent = '';
       note.className = 'form-note';
 
-      const alias   = form.elements['alias'];
-      const email   = form.elements['email'];
-      const message = form.elements['message'];
+      var alias   = form.elements['alias'];
+      var email   = form.elements['email'];
+      var message = form.elements['message'];
 
-      // Simple validation
+      // Validation — leverage browser built-in checks for email
       if (!alias.value.trim()) {
         setNote('// ERROR: Alias field required.', 'error');
         alias.focus();
         return;
       }
-      if (!isValidEmail(email.value.trim())) {
+      if (!email.checkValidity() || !email.value.trim()) {
         setNote('// ERROR: Invalid secure channel address.', 'error');
         email.focus();
         return;
@@ -49,7 +51,7 @@
       }
 
       // Simulate async transmission
-      const btn = form.querySelector('button[type="submit"]');
+      var btn = form.querySelector('button[type="submit"]');
       if (btn) {
         btn.disabled = true;
         btn.textContent = 'Transmitting...';
@@ -62,7 +64,7 @@
           btn.disabled = false;
           btn.textContent = 'Transmit Request';
         }
-      }, 1200);
+      }, FORM_SUBMIT_DELAY_MS);
     });
   }
 
@@ -70,10 +72,6 @@
     if (!note) return;
     note.textContent = text;
     note.className = 'form-note ' + (type || '');
-  }
-
-  function isValidEmail(val) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
   }
 
   /* ── Smooth active nav link highlight ───────────────────── */
