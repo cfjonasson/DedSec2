@@ -3,114 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DedSec2 | Reboot the System</title>
-  <meta name="description" content="Watch Dogs 2-inspired DedSec2 landing page." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>DedSec Interface</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="logo" href="#">DEDSEC<span>2</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#ops">Operations</a></li>
-        <li><a href="#collective">Collective</a></li>
-        <li><a href="#join">Join</a></li>
+  <main class="app">
+    <header class="topbar card">
+      <h1 class="glitch" data-text="DedSec Console">DedSec Console</h1>
+      <p class="subtitle">Watch Dogs 2 inspired UI — clean, sharp, and professional.</p>
+    </header>
+
+    <section class="card">
+      <h2>System Access</h2>
+      <div class="form-grid">
+        <label>
+          Username
+          <input type="text" placeholder="Enter handle" />
+        </label>
+
+        <label>
+          Access Key
+          <input type="password" placeholder="••••••••" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn">Authorize</button>
+        <button class="btn secondary">Scan Network</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Activity Feed</h2>
+      <ul class="feed">
+        <li>Node sync complete. Latency stable.</li>
+        <li>Firewall route remapped.</li>
+        <li>Encrypted channel active.</li>
       </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero container" aria-labelledby="hero-title">
-      <p class="eyebrow">ctOS // breach mode active</p>
-      <h1 id="hero-title" class="glitch" data-text="REBOOT THE SYSTEM">REBOOT THE SYSTEM</h1>
-      <p class="lead">We are DedSec2. Encrypt truth. Disrupt control. Rewrite the rules.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#join">Join the Collective</a>
-        <a class="btn btn-ghost" href="#ops">View Operations</a>
-      </div>
-    </section>
-
-    <section id="about" class="section container" aria-labelledby="about-title">
-      <h2 id="about-title">About DedSec2</h2>
-      <p>
-        DedSec2 is a digital resistance collective fighting surveillance overreach and algorithmic abuse.
-        We expose corrupted systems, protect privacy, and build tools for people — not corporations.
-      </p>
-    </section>
-
-    <section id="ops" class="section container" aria-labelledby="ops-title">
-      <h2 id="ops-title">Operations</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Operation: Blackout</h3>
-          <p>Disrupt exploitative data pipelines and return control to the public.</p>
-        </article>
-        <article class="card">
-          <h3>Operation: MirrorGhost</h3>
-          <p>Reveal hidden tracking layers embedded in “smart” city infrastructure.</p>
-        </article>
-        <article class="card">
-          <h3>Operation: DeadWire</h3>
-          <p>Neutralize manipulative influence networks with transparent intelligence dumps.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="collective" class="section container" aria-labelledby="collective-title">
-      <h2 id="collective-title">Collective</h2>
-      <div class="member-grid">
-        <article class="member">
-          <h3>Zero</h3>
-          <p>Signal architect / exploit chains / network infiltration.</p>
-        </article>
-        <article class="member">
-          <h3>Echo</h3>
-          <p>OSINT analyst / pattern hunter / social operations.</p>
-        </article>
-        <article class="member">
-          <h3>Glitch</h3>
-          <p>Hardware modder / drone systems / field sabotage.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="join" class="section container" aria-labelledby="join-title">
-      <h2 id="join-title">Join the Collective</h2>
-      <form class="join-form" id="joinForm" novalidate>
-        <label>
-          Alias
-          <input type="text" name="alias" required />
-        </label>
-        <label>
-          Secure Channel
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Why join?
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button class="btn btn-primary" type="submit">Transmit Request</button>
-        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-      </form>
+      <a href="#">View full diagnostics →</a>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 DedSec2 // We are many.</p>
-      <ul>
-        <li><a href="#" aria-label="X profile">X</a></li>
-        <li><a href="#" aria-label="GitHub profile">GitHub</a></li>
-        <li><a href="#" aria-label="Discord server">Discord</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
