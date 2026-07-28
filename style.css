@@ -110,7 +110,7 @@ button {
   color: var(--bg);
   background: linear-gradient(135deg, var(--accent), #5ff7dd);
   cursor: pointer;
-  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease, opacity 0.16s ease;
   box-shadow: 0 6px 20px rgba(33, 230, 193, 0.28);
 }
 
@@ -123,6 +123,15 @@ button:hover {
 .btn:active,
 button:active {
   transform: translateY(0);
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn.secondary,
@@ -182,6 +191,24 @@ a:focus-visible {
 .feed {
   margin-top: 0;
   padding-left: 18px;
+}
+
+.status {
+  min-height: 1.4em;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.status[data-type="info"] {
+  color: var(--muted);
+}
+
+.status[data-type="success"] {
+  color: var(--success);
+}
+
+.status[data-type="error"] {
+  color: var(--danger);
 }
 
 .glitch {

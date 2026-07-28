@@ -18,24 +18,26 @@
       <div class="form-grid">
         <label>
           Username
-          <input type="text" placeholder="Enter handle" />
+          <input id="username" type="text" placeholder="Enter handle" />
         </label>
 
         <label>
           Access Key
-          <input type="password" placeholder="••••••••" />
+          <input id="accessKey" type="password" placeholder="••••••••" />
         </label>
       </div>
 
       <div class="actions">
-        <button class="btn">Authorize</button>
-        <button class="btn secondary">Scan Network</button>
+        <button id="authorizeBtn" class="btn">Authorize</button>
+        <button id="scanBtn" class="btn secondary">Scan Network</button>
       </div>
+
+      <p id="statusMessage" class="status" aria-live="polite"></p>
     </section>
 
     <section class="card">
       <h2>Activity Feed</h2>
-      <ul class="feed">
+      <ul id="activityFeed" class="feed">
         <li>Node sync complete. Latency stable.</li>
         <li>Firewall route remapped.</li>
         <li>Encrypted channel active.</li>
@@ -43,5 +45,7 @@
       <a href="#">View full diagnostics →</a>
     </section>
   </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
